@@ -8,12 +8,12 @@ import "./MainNavigation.css";
 import Backdrop from "../UIElements/Backdrop";
 
 const MainNavigation = (props) => {
-  const [drawerIsOpen, setDrawer] = React.useState(false);
+  const [drawerIsOpen, setDrawerHandler] = React.useState(false);
   return (
     <>
-      {drawerIsOpen && <Backdrop onClick={() => setDrawer(false)} />}
+      {drawerIsOpen && <Backdrop onClick={() => setDrawerHandler(false)} />}
       {drawerIsOpen && (
-        <SideDrawer>
+        <SideDrawer show={drawerIsOpen} onClick={() => setDrawerHandler(false)}>
           <nav className="main-navigation__drawer-nav">
             <NavLinks />
           </nav>
@@ -23,7 +23,7 @@ const MainNavigation = (props) => {
       <MainHeader>
         <button
           className="main-navigation__menu-btn"
-          onClick={() => setDrawer(!drawerIsOpen)}
+          onClick={() => setDrawerHandler(!drawerIsOpen)}
         >
           <span />
           <span />
