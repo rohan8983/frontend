@@ -3,12 +3,13 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
+  Switch
 } from "react-router-dom";
 
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
 import UserPLaces from "./places/pages/UserPLaces";
+import UpdatePlace from "./places/pages/UpdatePlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -17,14 +18,17 @@ const App = () => {
       <MainNavigation />
       <main>
         <Switch>
-          <Route path="/:userId/places" exact>
-            <UserPLaces />
-          </Route>
           <Route path="/" exact>
             <Users />
           </Route>
+          <Route path="/:userId/places" exact>
+            <UserPLaces />
+          </Route>
           <Route path="/places/new" exact>
             <NewPlace />
+          </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace />
           </Route>
           <Redirect to="/" />
         </Switch>
