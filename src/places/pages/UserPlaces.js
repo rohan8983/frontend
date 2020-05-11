@@ -15,9 +15,9 @@ const DUMMY_PLACES = [
       "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India",
     location: {
       lat: 27.1751448,
-      lng: 78.0421422,
+      lng: 78.0421422
     },
-    creator: "u1",
+    creator: "u1"
   },
   {
     id: "p2",
@@ -30,15 +30,15 @@ const DUMMY_PLACES = [
       "Netaji Subhash Marg, Lal Qila, Chandni Chowk, New Delhi, Delhi 110006",
     location: {
       lat: 28.6561592,
-      lng: 77.2410203,
+      lng: 77.2410203
     },
-    creator: "u2",
-  },
+    creator: "u2"
+  }
 ];
-const UserPLaces = () => {
+const UserPlaces = () => {
   const userId = useParams().userId;
-  const filterPLaces = DUMMY_PLACES.filter((place) => place.creator === userId);
+  const filterPLaces = DUMMY_PLACES.filter(place => place.creator === userId);
   return <PlaceList items={filterPLaces} />;
 };
 
-export default UserPLaces;
+export default UserPlaces;
